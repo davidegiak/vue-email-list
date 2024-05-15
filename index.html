@@ -9,7 +9,9 @@
 </head>
 <body>
     <div id="app">
-        <h3> {{mail}} </h3>
+        <ul>
+            <li v-for="element, i in mail"> {{mail}} </li>
+        </ul>
     </div>
     <script src="./js/main.js"></script>
 </body>
