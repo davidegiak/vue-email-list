@@ -10,7 +10,7 @@
 <body>
     <div id="app">
         <ul>
-            <li v-for="element, i in mail"> {{element}} </li>
+            <li v-if="mail.length == 10 " v-for="element, i in mail"> {{element}} </li>
         </ul>
         <a @click="generatore()" href="#">GENERA</a>
     </div>

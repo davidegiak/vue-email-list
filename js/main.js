@@ -28,3 +28,4 @@ const { createApp } = Vue
         console.log(this.mail);
     }
   }).mount('#app')
+
