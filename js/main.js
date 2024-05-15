@@ -9,13 +9,12 @@ const { createApp } = Vue
     },
     methods: {
         generatore() {
-          for (let i = 0; i <= 10; i++) {
-            const element = this.mail[i];
+          for (let i = 0; i < 10; i++) {
             axios.get(this.indirizzo).then((result) => {
                 let codiceRisposta = `${result.status}/${result.statusText}`;
                 let datiRisposta = result.data;
                 console.log("Ricevuta risposta", codiceRisposta, datiRisposta);
-                this.mail = datiRisposta.response;
+                this.mail.push(datiRisposta.response);
             
               })
           }
@@ -25,7 +24,7 @@ const { createApp } = Vue
     },
     mounted() {
         console.log("App montata");  
-        this.generatore();
+        // this.generatore();
         console.log(this.mail);
     }
   }).mount('#app')
