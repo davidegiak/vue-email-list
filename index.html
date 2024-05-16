@@ -9,8 +9,8 @@
 </head>
 <body>
     <div id="app">
-        <ul>
-            <li v-if="mail.length == userN" v-for="element, i in mail"> {{element}} </li>
+        <ul v-if="mail.length >= userN">
+            <li v-for="element, i in mail"> {{element}} </li>
         </ul>
         <input v-model="userN" type="text">
         <a @click="generatore()" href="#">GENERA</a>
