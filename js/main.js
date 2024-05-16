@@ -4,22 +4,20 @@ const { createApp } = Vue
     data() {
       return {
         mail:[],
-        indirizzo:"https://flynn.boolean.careers/exercises/api/random/mail"
+        indirizzo:"https://flynn.boolean.careers/exercises/api/random/mail",
+        userN:""
       }
     },
     methods: {
         generatore() {
-          for (let i = 0; i < 10; i++) {
+          for (let i = 0; i < this.userN; i++) {
             axios.get(this.indirizzo).then((result) => {
                 let codiceRisposta = `${result.status}/${result.statusText}`;
                 let datiRisposta = result.data;
                 console.log("Ricevuta risposta", codiceRisposta, datiRisposta);
-                this.mail.push(datiRisposta.response);
-            
+                this.mail.push(datiRisposta.response);      
               })
           }
-
-
         }
     },
     mounted() {
